@@ -1,0 +1,6 @@
+<div class="container">
+    <a [routerLink]="item.route" routerLinkActive="selected" *ngFor="let item of items">
+        <i class="material-symbols-outlined">{{item.icon}}</i>
+        {{item.module}}
+    </a>
+</div>

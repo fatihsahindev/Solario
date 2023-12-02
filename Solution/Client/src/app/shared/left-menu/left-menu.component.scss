@@ -1,0 +1,24 @@
+@import "app.component.scss";
+
+div {
+    @include size(100%, 100%);
+    flex-direction: column;
+
+    &:is(.container) {
+        @include flex(flex-start, center, 3rem);
+        background-color: rgba(0,0,0,0.01);
+        padding: 3rem;
+    }
+
+    & & { @include flex(space-between, stretch, 0); }
+}
+
+code {
+    @include font(2rem, 300);
+    @include flex(center, center, 0.5rem);
+
+    i {
+        @include font(3rem, 300);
+        margin-bottom: 0.25rem;
+    }
+}

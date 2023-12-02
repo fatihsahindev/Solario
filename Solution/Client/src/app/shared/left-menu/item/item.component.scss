@@ -1,0 +1,16 @@
+@import "app.component.scss";
+
+.container {
+    @include flex(center, flex-start, 0);
+    @include size(100%, 100%);
+    flex-direction: column;
+
+    a {
+        @include flex(flex-start, center, 1rem);
+        @include size(100%, 3rem);
+        padding: 1rem;
+        transition: 0.3s all;
+    }
+}
+
+.selected { background-color: rgba(0,0,0,0.1);; }

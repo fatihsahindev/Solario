@@ -1,0 +1,8 @@
+@import "app.component.scss";
+
+.container {
+    @include size(100vw, 100vh);
+    display: grid;
+    grid-template-columns: calc(100vw / 6) auto;
+    overflow: hidden;
+}

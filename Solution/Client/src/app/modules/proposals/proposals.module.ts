@@ -1,12 +1,15 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { ProposalsComponent } from './proposals.component';
 
 
 
 @NgModule({
-  declarations: [],
+  declarations: [
+    ProposalsComponent
+  ],
   imports: [
     CommonModule
   ]
 })
-export class SolarFarmsModule { }
+export class ProposalsModule { }

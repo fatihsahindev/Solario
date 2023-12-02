@@ -1,0 +1,22 @@
+@import "app.component.scss";
+
+.container {
+    text-align: center
+}
+
+.photo {
+    @include size(4rem, 4rem);
+    min-width: 4rem;
+    margin: auto;
+    border-radius: 50%;
+    background-size: cover;
+    background-position: center top;
+    background-image: url(../../../../assets/img/user.jpg);
+}
+
+p {
+    @include font(0.9rem, 300);
+    margin: 0.5rem;
+}
+
+a { @include font(0.8rem, 600); }
