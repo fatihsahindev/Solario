@@ -5,12 +5,23 @@
     @include size(100%, 100%);
     flex-direction: column;
 
+    * { transition: 0.2s all; }
+
     a {
         @include flex(flex-start, center, 1rem);
         @include size(100%, 3rem);
         padding: 1rem;
-        transition: 0.3s all;
+        color: $gray-600;
+
+        &:hover { color: $white; }
+
+        i { color: $blue-700; }
+
+        &.selected {
+            color: $white;
+            background-color: $blue-800;
+        
+            i { color: $blue-400; }
+        }
     }
 }
-
-.selected { background-color: rgba(0,0,0,0.1);; }

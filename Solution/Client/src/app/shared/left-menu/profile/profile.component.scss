@@ -17,6 +17,13 @@
 p {
     @include font(0.9rem, 300);
     margin: 0.5rem;
+    color: $blue-300
 }
 
-a { @include font(0.8rem, 600); }
+a {
+    @include font(0.8rem, 600);
+    color: $blue-500;
+    transition: 0.2s all;
+
+    &:hover { color: $blue-200; }
+}

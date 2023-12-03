@@ -6,7 +6,7 @@ div {
 
     &:is(.container) {
         @include flex(flex-start, center, 3rem);
-        background-color: rgba(0,0,0,0.01);
+        background-color: $blue-900;
         padding: 3rem;
     }
 
@@ -16,9 +16,11 @@ div {
 code {
     @include font(2rem, 300);
     @include flex(center, center, 0.5rem);
+    color: $white;
 
     i {
         @include font(3rem, 300);
         margin-bottom: 0.25rem;
+        color: $blue-400;
     }
 }
