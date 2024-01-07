@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { SolarFarmsComponent } from './solar-farms.component';
+import { MaterialClassModule } from '../material-class/material-class.module';
 
 
 
@@ -9,7 +10,8 @@ import { SolarFarmsComponent } from './solar-farms.component';
     SolarFarmsComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    MaterialClassModule
   ]
 })
 export class SolarFarmsModule { }

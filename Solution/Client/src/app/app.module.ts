@@ -11,6 +11,7 @@ import { InboxModule } from './modules/inbox/inbox.module';
 import { LeftMenuComponent } from './shared/left-menu/left-menu.component';
 import { ProfileComponent } from './shared/left-menu/profile/profile.component';
 import { ItemComponent } from './shared/left-menu/item/item.component';
+import { MaterialClassModule } from './modules/material-class/material-class.module';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { ItemComponent } from './shared/left-menu/item/item.component';
     DashboardModule,
     SolarFarmsModule,
     ProposalsModule,
-    InboxModule
+    InboxModule,
+    MaterialClassModule
   ],
   providers: [],
   bootstrap: [AppComponent]

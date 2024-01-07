@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { InboxComponent } from './inbox.component';
+import { MaterialClassModule } from '../material-class/material-class.module';
 
 
 
@@ -9,7 +10,8 @@ import { InboxComponent } from './inbox.component';
     InboxComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    MaterialClassModule
   ]
 })
 export class InboxModule { }

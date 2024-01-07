@@ -1,17 +1,17 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ProposalsComponent } from './proposals.component';
-import { MaterialClassDirective } from 'src/app/directives/material-class.directive';
+import { MaterialClassModule } from '../material-class/material-class.module';
 
 
 
 @NgModule({
   declarations: [
-    ProposalsComponent,
-    MaterialClassDirective
+    ProposalsComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    MaterialClassModule
   ]
 })
 export class ProposalsModule { }
