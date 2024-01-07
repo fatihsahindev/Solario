@@ -82,25 +82,28 @@ export class ProposalsComponent implements OnInit {
     },
   ];
 
-  constructor() {}
+  filteredProposals: Proposals[] = [];
+  filteredCount: number = 0;
+  statusTabs: string[] = [ 'all proposals', 'approved', 'in progress', 'blocked'];
+  selectedStatus: string = 'all proposals';
+
+  constructor() {
+    this.filteredProposals = this.proposals;
+    this.filteredCount = this.proposals.length;
+  }
 
   ngOnInit(): void {}
 
-  priority(value: string) {
+  icon(value: string) {
     switch (value) {
+      // priority
       case 'high':
         return 'stat_2';
       case 'medium':
         return 'stat_1';
       case 'low':
         return 'stat_minus_1';
-      default:
-        return '';
-    }
-  }
-
-  status(value: string) {
-    switch (value) {
+      // status
       case 'approved':
         return 'check_circle';
       case 'in progress':
@@ -109,6 +112,26 @@ export class ProposalsComponent implements OnInit {
         return 'warning';
       default:
         return '';
+    }
+  }
+
+  filterByStatus(status: string) {
+    this.selectedStatus = status;
+
+    if (status === 'all proposals') {
+      this.filteredProposals = this.proposals;
+    } else {
+      this.filteredProposals = this.proposals.filter(
+        (proposal) => proposal.status === status
+      );
+    }
+  }
+
+  getCount(status: string): number {
+    if (status === 'all proposals') {
+      return this.proposals.length;
+    } else {
+      return this.proposals.filter((proposal) => proposal.status === status).length;
     }
   }
 }

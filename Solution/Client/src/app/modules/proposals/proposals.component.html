@@ -15,6 +15,16 @@
         </div>
     </header>
 
+    <!-- Tab -->
+    <div class="tab">
+        <p *ngFor="let status of statusTabs"
+            [class.selected]="selectedStatus === status"
+            (click)="filterByStatus(status)">
+            {{status | titlecase}}
+            {{ status !== 'all proposals' ? '(' + getCount(status) + ')' : '' }}
+        </p>
+    </div>
+      
     <!-- Table -->
     <table>
         <tr>
@@ -25,7 +35,7 @@
             <th>CLIENT</th>
             <th>DATE CREATED</th>
         </tr>
-        <ng-container *ngFor="let i of proposals">
+        <ng-container *ngFor="let i of filteredProposals">
             <tr>
                 <td>
                     <input type="checkbox">
@@ -34,13 +44,13 @@
                 <td>{{i.scoring}}/5</td>
                 <td>
                     <span [class]="i.priority">
-                        <i>{{priority(i.priority)}}</i>
+                        <i>{{icon(i.priority)}}</i>
                         {{i.priority}}
                     </span>
                 </td>
                 <td>
                     <span [class]="i.status">
-                        <i>{{status(i.status)}}</i>
+                        <i>{{icon(i.status)}}</i>
                         {{i.status}}
                     </span>
                 </td>
