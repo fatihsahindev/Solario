@@ -1,8 +1,6 @@
 @import "app.component.scss";
 
-.container {
-    padding: 3rem;
-}
+.container { padding: 3rem; }
 
 // Header
 header {
@@ -20,7 +18,7 @@ header {
 .search {
     @include flex(center, center, 0.25rem);
     @include size(max-content, 3rem);
-    border: 2px solid $blue-700;
+    border: 3px solid $blue-700;
     color: $white;
     
     i {
@@ -30,9 +28,11 @@ header {
     
     input {
         @include size(100%, 100%);
-        background-color: transparent;
+        color: $white;
         border: none;
         outline: none;
+        padding-right: 0.5rem;
+        background-color: transparent;
 
         &::placeholder {
             @include font(0.9rem, 200);
@@ -47,12 +47,11 @@ header {
 // Create
 .create {
     @include flex(center, center, 0.5rem);
-    @include font(0.9rem, 500);
+    @include font(0.9rem, 400);
     @include size(max-content, 3rem);
     color: $white;
     background-color: $blue;
     padding: 3px 1rem 3px 3px;
-    text-align: center;
     cursor: pointer;
     transition: 0.3s all;
 
@@ -92,6 +91,7 @@ header {
 
 // Table
 table {
+    @include font(0.9rem, 400);
     @include size(100%, 100%);
     color: $gray-500;
     border-collapse: collapse;
