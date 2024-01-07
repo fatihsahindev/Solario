@@ -1,0 +1,136 @@
+@import "app.component.scss";
+
+.container {
+    padding: 3rem;
+}
+
+// Header
+header {
+    @include flex(space-between, center, 0);
+    
+    p {
+        @include font(2rem, 200);
+        color: $white;
+    }
+    
+    > div { @include flex(center, center, 0.5rem); }
+}
+
+// Search
+.search {
+    @include flex(center, center, 0.25rem);
+    @include size(max-content, 3rem);
+    border: 2px solid $blue-700;
+    color: $white;
+    
+    i {
+        @include font(1.5rem, 200);
+        padding: 0.5rem;
+    }
+    
+    input {
+        @include size(100%, 100%);
+        background-color: transparent;
+        border: none;
+        outline: none;
+
+        &::placeholder {
+            @include font(0.9rem, 200);
+            color: $white;
+            transition: 0.3s all;
+        }
+
+        :is(:focus, :focus-within) &::placeholder { color: transparent; }
+    }
+}
+
+// Create
+.create {
+    @include flex(center, center, 0.5rem);
+    @include font(0.9rem, 500);
+    @include size(max-content, 3rem);
+    color: $white;
+    background-color: $blue;
+    padding: 3px 0.5rem 3px 3px;
+    text-align: center;
+    cursor: pointer;
+    transition: 0.3s all;
+
+    &:hover { background-color: $blue-600 }
+
+    i {
+        @include flex(center, center, 0);
+        @include font(1.25rem, 300);
+        @include size(calc(3rem - 6px), 100%);
+        background-color: $blue-800;
+    }
+}
+
+// Table
+table {
+    @include size(100%, 100%);
+    color: $gray-500;
+    margin-top: 5rem;
+    border-collapse: collapse;
+
+    text: {
+        align: left;
+        transform: capitalize;
+    }
+
+    th { font-weight: normal; }
+
+    tr {
+
+        &:has(input) { height: 3rem; }
+
+        &:not(:has(input)) { height: 0.5rem; }
+
+        &:has(td) {
+            border: 2px solid transparent;
+            background-color: rgba($blue-700, 0.3);
+            transition: 0.3s all;
+
+            &:hover {
+                color: $white;
+                border-color: $blue-600;
+            }
+        }
+        
+        input { margin: 0 1rem; }
+
+        span { @include flex(left, center, 0.5rem); }
+    }    
+}
+
+// Priority
+$priority: (
+    'high' saturate($red-400, 50%),
+    'medium' saturate($green-400, 50%),
+    'low' $gray-600,
+);
+
+@each $a, $b in $priority { .#{$a} i { color: $b; } }
+
+// Status
+$status: (
+    'approved' $green  $green-100,
+    'progress' $yellow $yellow-100,
+    'blocked'  $red    $red-100,
+);
+
+@each $a, $b, $c in $status {
+
+    .#{$a} {
+        @include font(0.8rem, 300);
+        color: saturate($c, 100%);
+        width: max-content;
+        padding: 0.25rem 0.5rem;
+        background-color: rgba(saturate($b, 50%), 0.2);
+
+        i {
+            @include font(1.1rem, 300);
+            color: saturate($c, 100%);
+        }
+    }
+}

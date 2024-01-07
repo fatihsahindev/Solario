@@ -1,1 +1,53 @@
-<p>proposals works!</p>
+<div class="container">
+
+    <!-- Header -->
+    <header>
+        <p>Proposals</p>
+        <div>
+            <div class="search">
+                <i>search</i>
+                <input type="search" placeholder="Search">
+            </div>
+            <div class="create">
+                <i>add</i>
+                CREATE PROPOSAL
+            </div>
+        </div>
+    </header>
+
+    <!-- Table -->
+    <table>
+        <tr>
+            <th><input type="checkbox"> NUMBER</th>
+            <th>SCORING</th>
+            <th>PRIORITY</th>
+            <th>STATUS</th>
+            <th>CLIENT</th>
+            <th>DATE CREATED</th>
+        </tr>
+        <ng-container *ngFor="let i of proposals">
+            <tr>
+                <td>
+                    <input type="checkbox">
+                    {{i.id}}
+                </td>
+                <td>{{i.scoring}}/5</td>
+                <td>
+                    <span [class]="i.priority">
+                        <i>{{priority(i.priority)}}</i>
+                        {{i.priority}}
+                    </span>
+                </td>
+                <td>
+                    <span [class]="i.status">
+                        <i>{{status(i.status)}}</i>
+                        {{i.status}}
+                    </span>
+                </td>
+                <td>{{i.client}}</td>
+                <td>{{i.date}}</td>
+            </tr>
+            <tr></tr>
+        </ng-container>
+    </table>
+</div>
