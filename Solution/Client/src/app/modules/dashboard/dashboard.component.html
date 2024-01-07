@@ -1,1 +1,88 @@
-<p>dashboard works!</p>
+<div class="container">
+
+    <p class="header">Dashboard</p>
+
+    <section>
+        <aside>
+            <div class="row">
+
+                <!-- Income -->
+                <div class="income">
+                    <span class="cash">{{cash}}</span>
+                    <span [className]="cashIncreased">
+                        <i>arrow_drop_{{cashIncreased}}</i>
+                        {{cashRatio}}
+                    </span>
+                </div>
+
+                <!-- Diagnostic -->
+                <div class="diagnostic">
+                    <i>monitor_heart</i>
+                    Run Diagnostic
+                </div>
+            </div>
+
+            <sub>Potential monthly income</sub>
+
+            <!-- Indicators -->
+            <div class="row">
+
+                <div class="indicator">
+                    <i>battery_charging_full</i>
+                    <div>
+                        <p>487<span class="unit">MWh</span></p>
+                        <span>capacity</span>
+                    </div>
+                </div>
+
+                <div class="indicator">
+                    <i>electric_meter</i>
+                    <div>
+                        <p>1.72<span class="unit">MWh</span></p>
+                        <span>consumption</span>
+                    </div>
+                </div>
+
+                <div class="indicator">
+                    <i>speed</i>
+                    <div>
+                        <p>
+                            24.5<span class="unit">%</span>
+                            <span [className]="avgIncreased">
+                                <i>arrow_drop_{{avgIncreased}}</i>
+                                {{avgRatio}}
+                            </span>
+                        </p>
+                        <span>avg. efficiency</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Chart Area -->
+            <div class="row">
+                
+                <p class="header">Power energy generation</p>
+                
+            </div>
+
+            <sub>01 - 30 November 2022</sub>
+
+            <div class="chart">Chart</div>
+
+            <p class="header">Reports</p>
+
+        </aside>
+        
+        <!-- Map Area -->
+        <aside>
+            <div class="map">
+                <p class="header">Solar Farms</p>
+                <span class="issue">16 issues found</span>
+            </div>
+
+            <sub>4 farms</sub>
+
+            <div class="chart">Map</div>
+        </aside>
+    </section>
+</div>
